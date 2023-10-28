@@ -16,7 +16,7 @@ import javax.persistence.GenerationType;
 public class Course_Info {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(name = "advising_requisite_code", unique = true) // Unique constraint on advisingRequisiteCode
     private String advisingRequisiteCode;
@@ -80,7 +80,7 @@ public class Course_Info {
         this.maxCreditHours = 0;
         this.minCreditHours = 0;
     }
-    public Course_Info(Integer id, String advisingRequisiteCode, String coreLiteratureRequirement, String courseCatalogText, String courseCode, String courseCodeNumber, String courseCodePrefix, String courseCodeSanitized, int courseFees, String courseTitle, int defaultCreditHours, String divisionCode, String feeType, String fixedVariableCredit, int maxCreditHours, int minCreditHours) {
+    public Course_Info(Long id, String advisingRequisiteCode, String coreLiteratureRequirement, String courseCatalogText, String courseCode, String courseCodeNumber, String courseCodePrefix, String courseCodeSanitized, int courseFees, String courseTitle, int defaultCreditHours, String divisionCode, String feeType, String fixedVariableCredit, int maxCreditHours, int minCreditHours) {
         this.id = id;
         this.advisingRequisiteCode = advisingRequisiteCode;
         this.coreLiteratureRequirement = coreLiteratureRequirement;
@@ -101,11 +101,11 @@ public class Course_Info {
 
     // Constructors, getters, setters...
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
