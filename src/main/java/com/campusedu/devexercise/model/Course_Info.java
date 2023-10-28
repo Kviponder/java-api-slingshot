@@ -4,6 +4,10 @@ package com.campusedu.devexercise.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
