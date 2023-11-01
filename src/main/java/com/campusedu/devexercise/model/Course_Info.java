@@ -15,50 +15,50 @@ import javax.persistence.GenerationType;
 
 public class Course_Info {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
 
     @Column(name = "advising_requisite_code", unique = true) // Unique constraint on advisingRequisiteCode
-    private String advisingRequisiteCode;
+    String advisingRequisiteCode;
 
     @Column(name = "core_literature_requirement")
-    private String coreLiteratureRequirement;
+    String coreLiteratureRequirement;
 
     @Column(name = "course_catalog_text", columnDefinition = "TEXT")
-    private String courseCatalogText;
+    String courseCatalogText;
 
     @Column(name = "course_code")
-    private String courseCode;
+    String courseCode;
 
     @Column(name = "course_code_number")
-    private String courseCodeNumber;
+    String courseCodeNumber;
 
     @Column(name = "course_code_prefix")
-    private String courseCodePrefix;
+    String courseCodePrefix;
 
     @Column(name = "course_code_sanitized")
-    private String courseCodeSanitized;
+    String courseCodeSanitized;
 
     @Column(name = "course_fees")
-    private int courseFees;
+    int courseFees;
 
     @Column(name = "course_title")
-    private String courseTitle;
+    String courseTitle;
 
     @Column(name = "default_credit_hours")
-    private int defaultCreditHours;
+    int defaultCreditHours;
 
     @Column(name = "division_code")
-    private String divisionCode;
+    String divisionCode;
 
     @Column(name = "fee_type")
-    private String feeType;
+    String feeType;
 
     @Column(name = "fixed_variable_credit")
-    private String fixedVariableCredit;
+    String fixedVariableCredit;
 
     @Column(name = "max_credit_hours")
-    private int maxCreditHours;
+    int maxCreditHours;
 
     @Column(name = "min_credit_hours")
     private int minCreditHours;
@@ -80,7 +80,8 @@ public class Course_Info {
         this.maxCreditHours = 0;
         this.minCreditHours = 0;
     }
-    public Course_Info(Long id, String advisingRequisiteCode, String coreLiteratureRequirement, String courseCatalogText, String courseCode, String courseCodeNumber, String courseCodePrefix, String courseCodeSanitized, int courseFees, String courseTitle, int defaultCreditHours, String divisionCode, String feeType, String fixedVariableCredit, int maxCreditHours, int minCreditHours) {
+
+    public Course_Info(Integer id, String advisingRequisiteCode, String coreLiteratureRequirement, String courseCatalogText, String courseCode, String courseCodeNumber, String courseCodePrefix, String courseCodeSanitized, int courseFees, String courseTitle, int defaultCreditHours, String divisionCode, String feeType, String fixedVariableCredit, int maxCreditHours, int minCreditHours) {
         this.id = id;
         this.advisingRequisiteCode = advisingRequisiteCode;
         this.coreLiteratureRequirement = coreLiteratureRequirement;
@@ -101,11 +102,12 @@ public class Course_Info {
 
     // Constructors, getters, setters...
 
-    public Long getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
