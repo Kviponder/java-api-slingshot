@@ -8,9 +8,12 @@ import java.util.List;
 @Repository
 
 public interface CourseInfoRepository extends JpaRepository<Course_Info, Integer> {
+
     List<Course_Info> findByCourseCodePrefix(String courseCodePrefix) throws Exception;
 
     List<Course_Info> findByCourseCodeNumber(String courseCodeNumber) throws Exception;
+
+    List<Course_Info> findByCourseCodePrefixAndCourseCodeNumber(String courseCodePrefix, String courseCodeNumber);
 
     List<Course_Info> findAll();
 
