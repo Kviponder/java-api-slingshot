@@ -4,6 +4,8 @@ package com.campusedu.devexercise.controllers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+
 
 import com.campusedu.devexercise.model.Course_Info;
 import com.campusedu.devexercise.services.CourseService;
@@ -34,7 +36,7 @@ public class CourseInfoController {
         } catch (CourseNotFoundException e) {
             return ResponseEntity.notFound().build();
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().build();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
