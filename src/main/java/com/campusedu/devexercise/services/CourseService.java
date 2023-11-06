@@ -20,6 +20,10 @@ public class CourseService {
         this.courseInfoRepository = courseInfoRepository;
     }
 
+    public List<Course_Info> getAllCourses() {
+        return courseInfoRepository.findAll();
+    }
+
     public List<Course_Info> findByCourseCodePrefixAndCourseCodeNumber(String courseCodePrefix, String courseCodeNumber) {
         try {
             List<Course_Info> coursesByPrefix = courseCodePrefix != null ?
