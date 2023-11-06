@@ -6,6 +6,9 @@ import com.campusedu.devexercise.repository.CourseInfoRepository;
 
 
 
+
+
+// Main class for starting the Devexercise Spring Boot application
 @SpringBootApplication
 public class DevexerciseApplication {
 	public static void main(String[] args) {
