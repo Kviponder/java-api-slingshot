@@ -14,56 +14,74 @@ import javax.persistence.GenerationType;
 @Table(name = "course_info")
 
 public class Course_Info {
+    // Primary key for the Course_Info entity
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
+    // Unique constraint on advisingRequisiteCode
     @Column(name = "advising_requisite_code", unique = true) // Unique constraint on advisingRequisiteCode
     String advisingRequisiteCode;
 
+    // Core literature requirement associated with the course
     @Column(name = "core_literature_requirement")
     String coreLiteratureRequirement;
 
+    // Full course catalog description (can be long)
     @Column(name = "course_catalog_text", columnDefinition = "TEXT")
     String courseCatalogText;
 
+    // Course code (e.g., CS101)
     @Column(name = "course_code")
     String courseCode;
 
+    // Course code number (e.g., 101)
     @Column(name = "course_code_number")
     String courseCodeNumber;
 
+    // Course code prefix (e.g., CS)
     @Column(name = "course_code_prefix")
     String courseCodePrefix;
 
+    // Sanitized version of the course code
     @Column(name = "course_code_sanitized")
     String courseCodeSanitized;
 
+    // Course fees in no particular unit
     @Column(name = "course_fees")
     int courseFees;
 
+    // Title of the course
     @Column(name = "course_title")
     String courseTitle;
 
+    // Default credit hours for the course
     @Column(name = "default_credit_hours")
     int defaultCreditHours;
 
+    // Division code associated with the course
     @Column(name = "division_code")
     String divisionCode;
 
+    // Type of fee associated with the course
     @Column(name = "fee_type")
     String feeType;
 
+    // Fixed or variable credit hours for the course
     @Column(name = "fixed_variable_credit")
     String fixedVariableCredit;
 
+    // Maximum credit hours allowed
     @Column(name = "max_credit_hours")
     int maxCreditHours;
 
+    // Minimum credit hours required
     @Column(name = "min_credit_hours")
     private int minCreditHours;
+
+    // Constructors
+    //  Default constructor
     public Course_Info() {
-        // Default no-argument constructor
         this.advisingRequisiteCode = "";
         this.coreLiteratureRequirement = "";
         this.courseCatalogText = "";
@@ -81,6 +99,7 @@ public class Course_Info {
         this.minCreditHours = 0;
     }
 
+    //  Parameterized constructor
     public Course_Info(Integer id, String advisingRequisiteCode, String coreLiteratureRequirement, String courseCatalogText, String courseCode, String courseCodeNumber, String courseCodePrefix, String courseCodeSanitized, int courseFees, String courseTitle, int defaultCreditHours, String divisionCode, String feeType, String fixedVariableCredit, int maxCreditHours, int minCreditHours) {
         this.id = id;
         this.advisingRequisiteCode = advisingRequisiteCode;
@@ -100,7 +119,7 @@ public class Course_Info {
         this.minCreditHours = minCreditHours;
     }
 
-    // Constructors, getters, setters...
+    //getters, setters...
 
 
     public Integer getId() {

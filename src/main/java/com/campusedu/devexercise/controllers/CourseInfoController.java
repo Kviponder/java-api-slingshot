@@ -6,7 +6,6 @@
     import org.springframework.web.bind.annotation.RestController;
     import org.springframework.http.HttpStatus;
 
-
     import com.campusedu.devexercise.model.Course_Info;
     import com.campusedu.devexercise.services.CourseService;
     import com.campusedu.devexercise.exceptions.CourseNotFoundException;
@@ -19,16 +18,20 @@
     @RestController
     @RequestMapping("/api/courseInfo")
     public class CourseInfoController {
-
         private final CourseService courseService;
-
-
         @Autowired
         public CourseInfoController(CourseService courseService) {
             this.courseService = courseService;
         }
+    /**
+     * Get a list of courses based on courseCodePrefix and courseCodeNumber.
+     *
+     * @param courseCodePrefix Filter courses by code prefix (optional).
+     * @param courseCodeNumber Filter courses by code number (optional).
+     * @return ResponseEntity containing a list of matching Course_Info objects.
+     */
 
-        @GetMapping
+     @GetMapping
         public ResponseEntity<List<Course_Info>> getCourseInfo(@RequestParam(required = false) String courseCodePrefix,
                                                               @RequestParam(required = false) String courseCodeNumber) {
             try {
@@ -40,7 +43,11 @@
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
         }
-
+        /**
+         * Get a list of all courses available.
+         *
+         * @return ResponseEntity containing a list of all Course_Info objects.
+         */
         @GetMapping("/all")
         public ResponseEntity<List<Course_Info>> getAllCourses() {
             List<Course_Info> allCourses = courseService.getAllCourses();

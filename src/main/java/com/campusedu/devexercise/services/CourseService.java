@@ -20,10 +20,25 @@ public class CourseService {
         this.courseInfoRepository = courseInfoRepository;
     }
 
+    /**
+     * Get a List of all Courses
+     *
+     * @return Lists all of the course_info objects, ie class data
+     */
+
     public List<Course_Info> getAllCourses() {
         return courseInfoRepository.findAll();
     }
 
+    /**
+     * Get a list of courses based on courseCodePrefix and courseCodeNumber.
+     * @param courseCodePrefix The prefix of the course ie: EDU.
+     * @param courseCodeNumber The code number of the course ie: 101.
+     * @return List of course objects matching the prefix and/or number.
+     * @throws CourseNotFoundException If no courses match the input criteria..
+     * @throws CourseServiceException If an unexpected error occurs while retrieving course data.
+     *
+     */
     public List<Course_Info> findByCourseCodePrefixAndCourseCodeNumber(String courseCodePrefix, String courseCodeNumber) {
         try {
             List<Course_Info> coursesByPrefix = courseCodePrefix != null ?
