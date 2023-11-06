@@ -22,6 +22,7 @@
 
         private final CourseService courseService;
 
+
         @Autowired
         public CourseInfoController(CourseService courseService) {
             this.courseService = courseService;
@@ -40,5 +41,11 @@
             }
         }
 
+        @GetMapping("/all")
+        public ResponseEntity<List<Course_Info>> getAllCourses() {
+            List<Course_Info> allCourses = courseService.getAllCourses();
+            return ResponseEntity.ok(allCourses);
+        }
 
     }
+

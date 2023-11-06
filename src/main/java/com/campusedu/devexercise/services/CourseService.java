@@ -44,5 +44,8 @@ public class CourseService {
         } catch (Exception e) {
             throw new CourseServiceException("An unexpected error occurred while retrieving course information", e);
         }
+
+
     }
+
 }
