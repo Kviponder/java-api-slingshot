@@ -1,4 +1,4 @@
-# Campus Edu DevExercise Project
+# DevExercise Project- Java API
 
 ## Description
 The DevExercise Project for Campus Inc. is a Spring Boot application that provides a RESTful API to manage course information. It allows users to interact with a PostgreSQL database to perform CRUD operations on course data.
